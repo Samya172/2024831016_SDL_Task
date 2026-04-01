@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
     SDL_Window* window = SDL_CreateWindow("Task Selection", 800, 600, 0);
     SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL);
 
-    int task = 1;
+    int task = 103;
 
     
     int x1 = 100, y1 = 300, r1 = 25;
@@ -49,12 +49,12 @@ int main(int argc, char* argv[])
             {
                 SDL_Keycode key = event.key.key;
 
-                if (key == SDLK_1) task = 1;
-                if (key == SDLK_2) { task = 2; r_task2 = 10; } 
-                if (key == SDLK_3) task = 3;
+                if (key == SDLK_1) task = 101;
+                if (key == SDLK_2) { task = 102; r_task2 = 10; } 
+                if (key == SDLK_3) task = 103;
 
               
-                if (task == 3)
+                if (task == 103)
                 {
                     if (key == SDLK_LEFT)  x2 -= 10;
                     if (key == SDLK_RIGHT) x2 += 10;
@@ -69,13 +69,13 @@ int main(int argc, char* argv[])
         SDL_RenderClear(renderer);
 
        
-        if (task == 1) 
+        if (task == 101) 
         {
             
             SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
             Circle(renderer, 400, 300, 50);
         }
-        else if (task == 2) 
+        else if (task == 102) 
         {
             
             r_task2 += 2;
@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
             SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
             Circle(renderer, 400, 300, r_task2);
         }
-        else if (task == 3) 
+        else if (task == 103) 
         {
             
             x1 += speed;
